@@ -1,10 +1,9 @@
-text = input("Syötä numero tai teksti:\n")
+text_to_convert = input("Syötä numero tai teksti:\n")
 
-# jos vaihdetaan numero tekstiksi, laskee merkkejen määrän
-# jos merkkejä on alle viisi, vaihtaa numerot tekstiksi, ja tulostaa
-if text.isnumeric():
-    textlengthNum = len(text)
-    if textlengthNum <= 5:
+
+def convert_num_to_text(text):
+    text_length = len(text)
+    if text_length <= 5:
         text = text.replace("1", "yksi ")
         text = text.replace("2", "kaksi ")
         text = text.replace("3", "kolme ")
@@ -19,13 +18,10 @@ if text.isnumeric():
     else:
         print("Liian monta numeroa!")
 
-# jos vaihdetaan teksti numeroiksi, laskee välilyönnit ja lisää yhden
-# tällä saadaan numeroiden määrä
-# jos numeroita on alle viisi, vaihtaa tekstin numeroiksi
-# lopussa poistaa välilyönnit ja tulostaa
-else:
-    textlength = text.count(" ") + 1
-    if textlength <= 5:
+
+def convert_text_to_num(text):
+    text_length = text.count(" ") + 1
+    if text_length <= 5:
         text = text.replace("yksi", "1")
         text = text.replace("kaksi", "2")
         text = text.replace("kolme", "3")
@@ -39,4 +35,17 @@ else:
         text = text.replace(" ", "")
         print(text)
     else:
-        print("Liian monta numeroa!")
+        print("Liian monta sanaa!")
+
+
+# jos vaihdetaan numero tekstiksi, laskee merkkejen määrän
+# jos merkkejä on alle viisi, vaihtaa numerot tekstiksi, ja tulostaa
+if text_to_convert.isnumeric():
+    convert_num_to_text(text_to_convert)
+
+# jos vaihdetaan teksti numeroiksi, laskee välilyönnit ja lisää yhden
+# tällä saadaan numeroiden määrä
+# jos numeroita on alle viisi, vaihtaa tekstin numeroiksi
+# lopussa poistaa välilyönnit ja tulostaa
+else:
+    convert_text_to_num(text_to_convert)

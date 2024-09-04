@@ -1,8 +1,8 @@
 
 
-fullname = "Valtteri Linna"
+fullname = "Petteri Purkki"
 birthyear = "2000"
-address = "Väylätie 47 A 28, 96300 Rovaniemi"
+address = "Petterintie 23 A 4, 69690 Lieksa"
 
 print("Hello world!")
 print(fullname)
